@@ -1,0 +1,70 @@
+<div class="container center">
+  <p style="font-size: 12px;" class=" center red-text">{{ this.userService.getLoggedUser()._id }}</p>
+
+
+    <div class="col s12 m7">
+      <h2 class="header">Ajoutez votre propre recette !!</h2>
+      <div class="card horizontal"  style="border-radius: 25px 25px 25px 0px;">
+        <!--  <div class="card-image">
+          <img src="https://lorempixel.com/100/190/nature/6">
+        </div>  -->
+        <div class="card-stacked">
+          
+          <div class="card-content">
+            <form action="#" method="post">
+                <label style="font-size: 18px;" class="black-text"> Le nom de votre recette ?</label>
+                <input #nomRecette type="text" class="black-text input" placeholder="Le nom de votre recette ?" required/>
+
+                <label style="font-size: 18px;" class="black-text"> Combien de temps de préparation ?</label>
+                <input #tpsPrep type="text" class="black-text input" placeholder="Combien de temps de préparation ?" required/>
+
+                <label style="font-size: 18px;" class="black-text">Quel mode de préparation ?</label>
+                <input #modePrep type="text" class="black-text input" placeholder="Quel mode de préparation ?" required/>
+
+                <label style="font-size: 18px;" class="black-text"> Pour combien de personnes ?</label>
+                <input #nbPers type="number" min="1" class="black-text input" placeholder="Pour combien de personnes ?" required/>
+
+                <label style="font-size: 18px;" class="black-text"> Estimez la difficulté de votre recette </label>
+                <input #diff type="text" min="1" class="black-text input" placeholder="Facile ? Difficile ? A vous de juger" required/>
+            </form>
+          </div>
+          <br>
+          <div class="card-content">
+            <label style="font-size: 18px;" class="black-text"> Donnez nous la liste des ingrédients !</label>
+            <form action="#" method="post" id="ingredients">
+                <div class="row ingredientRow">
+                    <div class="col m12 l8">
+                        <input type="text" class="black-text input" placeholder="Le nom de l'ingrédient" required/>
+                    </div>
+                    <div class="col m6 l2">
+                        <input type="number" min="0" class="black-text input" placeholder="Quantitée" required/>
+                    </div>
+                    <div class="col m6 l2">
+                        <input type="text" class="black-text input" placeholder="Unitée" required/>
+                    </div>
+                  </div>
+
+            </form>
+            <a (click)="ajouterIngredient()" style="margin-left: 10px; margin-right: 10px;" class="hoverable blue lighten-1 white-text waves-effect waves-light btn">[+]</a>
+            <a (click)="supprimerIngredient()" style="margin-left: 10px; margin-right: 10px;" class="hoverable blue lighten-1 white-text waves-effect waves-light btn">[-]</a>
+
+          </div>
+          <br>
+          <div class="card-content">
+            <label style="font-size: 18px;" class="black-text"> Donnez nous la liste des étapes !</label>
+            <form action="#" method="post" id="etapes">
+                <input  id="etape1" type="text" class="black-text input etapeText" placeholder="Decrivez ce qu'il faut faire." required/>
+                
+            </form>
+            <a (click)="ajouterEtape()" style="margin-left: 10px; margin-right: 10px;" class="hoverable blue lighten-1 white-text waves-effect waves-light btn">[+]</a>
+            <a (click)="supprimerEtape()" style="margin-left: 10px; margin-right: 10px;" class="hoverable blue lighten-1 white-text waves-effect waves-light btn">[-]</a>
+    
+          </div>
+  
+          <div class="card-action">
+            <a (click)="ajouterRecette(nomRecette.value, tpsPrep.value, diff.value, modePrep.value, nbPers.value);" style="margin-left: 10px; margin-right: 10px;" class="hoverable blue lighten-1 white-text waves-effect waves-light btn" >Ajoutez ma recette !</a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>

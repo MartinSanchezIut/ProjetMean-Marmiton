@@ -1,0 +1,71 @@
+<!-- Navbar pour autres ecrans -->
+<nav class="hide-on-large-only">
+  <div class="nav-wrapper blue lighten-1">
+    <a id="logoTrigger" class="brand-logo center unclickableLink" (click)="showHideMenu()">
+      <i class="material-icons tiny">toc</i>  {{ title }} </a>
+  </div>
+</nav>
+<nav id="hideAbleMenu" class="hide-on-large-only hide" > <!-- hide -->
+  <div class="nav-wrapper blue lighten-1">
+    <ul class="center container">
+      <li class="blue hoverable"><a href="/" routerLink="/home" routerLinkActive="active">Home</a></li>
+      <li class="blue hoverable"><a href="#" routerLink="/recettes" routerLinkActive="active">Recettes</a></li>
+      <li class="red hoverable"><a href="#" routerLink="/ingredients" routerLinkActive="active">Ingrédients</a></li>
+      <li class="blue hoverable"><a href="#" routerLink="/recherche" routerLinkActive="active">Recherche</a></li>
+
+
+      <li *ngIf="this.userService.isLogged() === false" class="right blue hoverable"><a href="#" routerLink="/connexion" routerLinkActive="active">Connexion</a></li>
+      <li *ngIf="this.userService.isLogged() === true" class="right blue hoverable"><a href="#" routerLink="/home" routerLinkActive="active" (click)="this.userService.logout()">Deconnexion</a></li>
+      <li *ngIf="this.userService.isLogged() === true" class="right blue hoverable"><a href="#" routerLink="/ajouterRecette" routerLinkActive="active">Ajoutez une recette</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+  <!-- Navbar pour grand écran -->
+<nav class="hide-on-med-and-down">
+  <div class="nav-wrapper blue lighten-1">
+    <a class="brand-logo left unclickableLink" style="padding-left: 75px;"> {{ title }} </a>
+    <ul class="right">
+      <li class="blue hoverable"><a href="/" routerLink="/home" routerLinkActive="active">Home</a></li>
+      <li class="blue hoverable"><a href="#" routerLink="/recettes" routerLinkActive="active">Recettes</a></li>
+      <li class="red hoverable"><a href="#" routerLink="/ingredients" routerLinkActive="active">Ingrédients</a></li>
+      <li class="blue hoverable"><a href="#" routerLink="/recherche" routerLinkActive="active">Recherche</a></li>
+
+
+      <li *ngIf="this.userService.isLogged() === false" class="blue hoverable"><a href="#" routerLink="/connexion" routerLinkActive="active">Connexion</a></li>
+      <li *ngIf="this.userService.isLogged() === true" class="blue hoverable"><a href="#" routerLink="/ajouterRecette" routerLinkActive="active">Ajoutez une recette</a></li>
+      <li *ngIf="this.userService.isLogged() === true" class="blue hoverable"><a href="#" routerLink="/home" routerLinkActive="active" (click)="this.userService.logout();">Deconnexion</a></li>
+    </ul>
+  </div>
+</nav>
+<br>
+
+<!--
+<app-list-recettes></app-list-recettes>
+-->
+<router-outlet></router-outlet>
+<br><br>
+<footer class="page-footer blue lighten-1">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 style="font-size: 24px;" class="white-text">Marmiton</h5>
+        <ul>
+          <li><p style="font-size: 18px;" class="white-text ">HAI806I - Architectures web avancés.</p></li>
+          <li><p style="font-size: 18px;" class="white-text ">Par Martin Sanchez.</p></li>
+        </ul>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 style="font-size: 24px;" class="white-text">Mes réseaux</h5>
+        <ul>
+          <li><a style="font-size: 18px;" class="white-text " href="mailto:martin.sanchez@etu.umontpellier.fr"> - Mail : martin.sanchez@etu.umontpellier.fr</a></li>
+          <li><a style="font-size: 18px;" class="white-text " href="https://github.com/MartinSanchezIut"> - Github : https://github.com/MartinSanchezIut</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright blue">
+
+  </div>
+</footer>
