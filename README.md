@@ -1,6 +1,6 @@
 # Projet Mean : Marmiton
 
-Projet réalisé par Sanchez Martin dans le cadre du cour d'Architectures avancés du web.
+Projet réalisé par **Sanchez Martin** dans le cadre du cour d'Architectures avancés du web.
 
 # Le web service
 
